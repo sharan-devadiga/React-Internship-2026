@@ -7,6 +7,10 @@ import { name } from "./utils/constants";
 import HelloWorld from "./pages/Hello";
 import NewComponent from "./pages/NewComponent";
 import Greeting from "./pages/Greeting";
+import Alert from "./pages/Alert";
+import Conditional from "./pages/Conditional";
+import Lists from "./pages/Lists";
+import Form from "./pages/Form";
 
 function App() {
   let a = 30;
@@ -27,7 +31,12 @@ function App() {
 
       {/* <p>{a > b ? "A is greater" : "B is Greater"}</p>
       <HelloWorld /> */}
-      <Greeting />
+      {/* <Greeting /> */}
+      {/* <Alert /> */}
+
+      {/* <Conditional /> */}
+      {/* <Lists /> */}
+      <Form />
     </>
   );
 }
