@@ -15,6 +15,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Blog from "./pages/Blog";
 import NoPage from "./pages/NoPage";
+import Hooks from "./pages/Hooks";
 
 function App() {
   return (
@@ -22,10 +23,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<Blog />} />
-            <Route path="home" element={<Greeting />} />
+            <Route index element={<Greeting />} />
+            <Route path="blogs" element={<Blog />} />
             <Route path="list" element={<Lists />} />
             <Route path="login" element={<Form />} />
+            <Route path="hooks" element={<Hooks />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>
