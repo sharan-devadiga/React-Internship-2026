@@ -11,32 +11,25 @@ import Alert from "./pages/Alert";
 import Conditional from "./pages/Conditional";
 import Lists from "./pages/Lists";
 import Form from "./pages/Form";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Blog from "./pages/Blog";
+import NoPage from "./pages/NoPage";
 
 function App() {
-  let a = 30;
-  let b = 20;
-  let text = "";
-  if (a > b) {
-    text = "A is Greater";
-  } else {
-    text = "B is Greater";
-  }
   return (
     <>
-      {/* <h1>Hello {name}</h1>
-      <p>Result {text}</p> */}
-      {/* <div>
-      <h1>React is {5 + 5} times better with JSX</h1>
-       </div> */}
-
-      {/* <p>{a > b ? "A is greater" : "B is Greater"}</p>
-      <HelloWorld /> */}
-      {/* <Greeting /> */}
-      {/* <Alert /> */}
-
-      {/* <Conditional /> */}
-      {/* <Lists /> */}
-      <Form />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Blog />} />
+            <Route path="home" element={<Greeting />} />
+            <Route path="list" element={<Lists />} />
+            <Route path="login" element={<Form />} />
+            <Route path="*" element={<NoPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
