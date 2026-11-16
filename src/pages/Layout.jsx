@@ -19,6 +19,9 @@ function Layout() {
             <Link to="login">Login Here</Link>
           </li>
           <li>
+            <Link to="users">Users List</Link>
+          </li>
+          <li>
             <Link to="hooks">Hooks</Link>
           </li>
         </ul>
