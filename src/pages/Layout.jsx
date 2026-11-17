@@ -2,6 +2,8 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function Layout() {
+  let userAccessToken = localStorage.getItem("my-user");
+
   return (
     <>
       <nav>
@@ -16,8 +18,16 @@ function Layout() {
             <Link to="list">Lists</Link>
           </li>
           <li>
+            <Link to="tailwind">tailwind</Link>
+          </li>
+          <li>
             <Link to="login">Login Here</Link>
           </li>
+          {userAccessToken && (
+            <li>
+              <Link to="my/profile">My Profile</Link>
+            </li>
+          )}
           <li>
             <Link to="users">Users List</Link>
           </li>

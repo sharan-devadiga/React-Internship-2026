@@ -18,6 +18,7 @@ import NoPage from "./pages/NoPage";
 import Hooks from "./pages/Hooks";
 import Users from "./pages/Users";
 import Login from "./pages/Login";
+import MyProfile from "./pages/MyProfile";
 
 function App() {
   return (
@@ -28,9 +29,11 @@ function App() {
             <Route index element={<Greeting />} />
             <Route path="blogs" element={<Blog />} />
             <Route path="list" element={<Lists />} />
+            <Route path="tailwind" element={<Form />} />
             <Route path="login" element={<Login />} />
             <Route path="hooks" element={<Hooks />} />
             <Route path="users" element={<Users />} />
+            <Route path="my/profile" element={<MyProfile />} />
             <Route path="*" element={<NoPage />} />
           </Route>
         </Routes>

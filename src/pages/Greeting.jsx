@@ -28,6 +28,9 @@ function Greeting() {
         voluptatum, in nisi ea exercitationem? Quis temporibus repellat vel
         recusandae, sit magni doloribus?
       </p>
+      <h1 className="text-3xl font-bold underline bg-amber-100 font-serif p-10 text-center">
+        Hello world!
+      </h1>
       <NewComponent message={greetmsg} />
     </div>
   );
