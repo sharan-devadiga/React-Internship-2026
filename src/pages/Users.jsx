@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useActionData } from "react-router-dom";
+import { base_url } from "../utils/constants";
 
 function Users() {
   const [user, setUser] = useState([]);
@@ -10,12 +11,14 @@ function Users() {
   let fetchUsers = async () => {
     setLoading(true);
     try {
-      let response = await axios.get("https://dummyjson.com/users");
+      let response = await axios.get(`${base_url}/api/student/list/`);
       //   console.log("Users Log", response.data);
       //   console.log("one users", response.data.users);
       //   console.log("User ID", response.data);
 
-      setUser(response.data.users);
+      console.log(response.data.responseData);
+
+      setUser(response.data.responseData);
       setLoading(false);
       setError("");
     } catch (error) {
@@ -31,29 +34,28 @@ function Users() {
 
   return (
     <div>
-      {/* <div>{error && <p style={{ color: "red" }}>{error}</p>}</div> */}
+      <div>{error && <p style={{ color: "red" }}>{error}</p>}</div>
       <div>{loading && <p>{"Loading..."}</p>}</div>
       Users
       {!loading && (
         <table>
           <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Address</th>
-            <th>Bank currency</th>
-            <th>Company</th>
+            <th> Name</th>
+            <th>Email</th>
+            <th>Phone</th>&nbsp;&nbsp;
+            <th>age</th>&nbsp;&nbsp;&nbsp;
+            {/* <th>Company</th> */}
           </tr>
           {user.map((items) => (
             <tr>
-              <td>{items.firstName}</td>
-              <td>{items.lastName}</td>
-              <td>{items.address.address}</td>
-              <td>{items.bank.currency}</td>
-              <td>{items.company.name}</td>
-
-              <td>
+              <td>{items.name}</td>
+              <td>{items.email}</td>
+              <td>{items.phone}</td>&nbsp;&nbsp;&nbsp;
+              <td>{items.age}</td>
+              {/* <td>{items.company.name}</td> */}
+              {/* <td>
                 <img src={items.image} />
-              </td>
+              </td> */}
             </tr>
           ))}
         </table>

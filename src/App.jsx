@@ -19,10 +19,12 @@ import Hooks from "./pages/Hooks";
 import Users from "./pages/Users";
 import Login from "./pages/Login";
 import MyProfile from "./pages/MyProfile";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   return (
     <>
+      <Toaster position="top-right" reverseOrder={false} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Layout />}>

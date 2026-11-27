@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Outlet } from "react-router-dom";
 
 function Layout() {
-  let userAccessToken = localStorage.getItem("my-user");
+  let userAccessToken = localStorage.getItem("user_token");
 
   return (
     <>
